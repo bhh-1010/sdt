@@ -1,22 +1,327 @@
-### AL ###
-#Template for AL projects for Dynamics 365 Business Central
-#launch.json folder
-.vscode/
-#Cache folder
-.alcache/
-#Symbols folder
-.alpackages/
-#Snapshots folder
-.snapshots/
-#Testing Output folder
-.output/
-#Extension App-file
-*.app
-#Rapid Application Development File
-rad.json
-#Translation Base-file
-*.g.xlf
-#License-file
-*.flf
-#Test results file
-TestResults.xml
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Danh sách học sinh & phụ huynh</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      background: #f0f2f5;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-weight: bold;
+    }
+
+    table {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    table thead {
+      background-color: #0d6efd;
+      color: #fff;
+    }
+
+    table tbody tr {
+      opacity: 0;
+      transform: translateY(10px);
+      animation: fadeInRow 0.4s ease forwards;
+    }
+
+    table tbody tr:hover {
+      background-color: #eaf4ff;
+      transform: scale(1.01);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+
+    table tbody tr:nth-child(n) {
+      animation-delay: calc(0.03s * var(--i));
+    }
+
+    @keyframes fadeInRow {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    td:nth-child(2) {
+  color: #dc3545; /* Màu đỏ đẹp */
+  font-weight: bold;
+}
+  table tbody tr:hover td:nth-child(2) {
+  color: #000; /* màu cam đỏ */
+  font-weight: bold;
+  text-shadow: 0 0 5px rgba(255, 111, 97, 0.6);
+  transition: all 0.3s ease;
+}
+    td:nth-child(3),
+    td:nth-child(4) {
+      color: #0d6efd;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 1000px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container py-5">
+  <h2>📋 Danh sách số điện thoại học sinh & phụ huynh</h2>
+
+  <table class="table table-bordered table-striped bg-white">
+    <thead>
+      <tr>
+        <th>STT</th>
+        <th>Họ và tên</th>
+        <th>SĐT Học sinh</th>
+        <th>SĐT Phụ huynh</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- MẪU: 10 dòng đầu có style="--i:X;" để có hiệu ứng mượt -->
+      <tr style="--i:1"><td>1</td><td>Võ Đăng Á</td><td><i class="fa fa-phone"></i> 0979957250</td><td><i class="fa fa-phone"></i> 0378861897</td></tr>
+      <tr style="--i:2"><td>2</td><td>Phan Thế Anh</td><td><i class="fa fa-phone"></i> 0357788312</td><td><i class="fa fa-phone"></i> 0372597038</td></tr>
+      <tr style="--i:3"><td>3</td><td>Đinh Gia Bảo</td><td><i class="fa fa-phone"></i> 0849656567</td><td><i class="fa fa-phone"></i> 0788545888</td></tr>
+      <tr style="--i:4"><td>4</td><td>Nguyễn Khánh Gia Bảo</td><td><i class="fa fa-phone"></i> 0979963407</td><td><i class="fa fa-phone"></i> 0977122239</td></tr>
+      <tr style="--i:5"><td>5</td><td>Võ Nguyễn Văn Bảo</td><td><i class="fa fa-phone"></i> 0376727747</td><td><i class="fa fa-phone"></i> 0984692752</td></tr>
+      <tr style="--i:6"><td>6</td><td>Nguyễn Văn Cường</td><td><i class="fa fa-phone"></i> 0337398306</td><td><i class="fa fa-phone"></i> 0349136597</td></tr>
+      <tr style="--i:7"><td>7</td><td>Nguyễn Mạnh Dũng</td><td><i class="fa fa-phone"></i> 0376259817</td><td><i class="fa fa-phone"></i> 0971250458</td></tr>
+      <tr style="--i:8"><td>8</td><td>Nguyễn Quốc Đại</td><td><i class="fa fa-phone"></i> 0359474771</td><td><i class="fa fa-phone"></i> 0971788447</td></tr>
+      <tr style="--i:9"><td>9</td><td>Ngô Thị Linh Đan</td><td><i class="fa fa-phone"></i> 0961245382</td><td><i class="fa fa-phone"></i> 0396373996</td></tr>
+      <tr style="--i:10"><td>10</td><td>Đỗ Thành Đạt</td><td><i class="fa fa-phone"></i> 0862684302</td><td><i class="fa fa-phone"></i> 0917658079</td></tr>
+      <tr style="--i:11"><td>11</td><td>Huỳnh Tấn Đạt</td><td><i class="fa fa-phone"></i> 0912245108</td><td><i class="fa fa-phone"></i> 0343449668</td></tr>
+<tr style="--i:12"><td>12</td><td>Lê Văn Đạt</td><td><i class="fa fa-phone"></i> 0916754980</td><td><i class="fa fa-phone"></i> 0339230140</td></tr>
+<tr style="--i:13"><td>13</td><td>Nguyễn Thị Nguyên Hà</td><td><i class="fa fa-phone"></i> 0356243132</td><td><i class="fa fa-phone"></i> 0917016162</td></tr>
+<tr style="--i:14"><td>14</td><td>Nguyễn Trọng Hiệp</td><td><i class="fa fa-phone"></i> 0358319434</td><td><i class="fa fa-phone"></i> 0961356017</td></tr>
+<tr style="--i:15"><td>15</td><td>Đào Văn Hiếu</td><td><i class="fa fa-phone"></i> 0345764882</td><td><i class="fa fa-phone"></i> 0383688228</td></tr>
+<tr style="--i:16"><td>16</td><td>Cù Thị Hoa Hồng</td><td><i class="fa fa-phone"></i> 0398579548</td><td><i class="fa fa-phone"></i> 0386030089</td></tr>
+<tr style="--i:17"><td>17</td><td>Bùi Hữu Hùng</td><td><i class="fa fa-phone"></i> 0372936433</td><td><i class="fa fa-phone"></i> 0354382759</td></tr>
+<tr style="--i:18"><td>18</td><td>Nguyễn Thị Thanh Huyền</td><td><i class="fa fa-phone"></i> 0967909647</td><td><i class="fa fa-phone"></i> 0389447436</td></tr>
+<tr style="--i:19"><td>19</td><td>Đào Tuấn Hưng</td><td><i class="fa fa-phone"></i> 0886692748</td><td><i class="fa fa-phone"></i> 0905048855</td></tr>
+<tr style="--i:20"><td>20</td><td>Hoàng Anh Khoa</td><td><i class="fa fa-phone"></i> 0358643073</td><td><i class="fa fa-phone"></i> 0908410967</td></tr>
+<tr style="--i:21"><td>21</td><td>Trần Anh Kiệt</td><td><i class="fa fa-phone"></i> 0368737948</td><td><i class="fa fa-phone"></i> 0352364996</td></tr>
+<tr style="--i:22"><td>22</td><td>Võ Phan Anh Kiệt</td><td><i class="fa fa-phone"></i> 0347061758</td><td><i class="fa fa-phone"></i> 0965129350</td></tr>
+<tr style="--i:23"><td>23</td><td>Trần Thị Thu Lan</td><td><i class="fa fa-phone"></i> 0387825498</td><td><i class="fa fa-phone"></i> 0352543107</td></tr>
+<tr style="--i:24"><td>24</td><td>Hoàng Mai Khánh Linh</td><td><i class="fa fa-phone"></i> 0816154579</td><td><i class="fa fa-phone"></i> 0852506679</td></tr>
+<tr style="--i:25"><td>25</td><td>Nguyễn Nhật Minh</td><td><i class="fa fa-phone"></i> 0388978565</td><td><i class="fa fa-phone"></i> 0974796512</td></tr>
+<tr style="--i:26"><td>26</td><td>Lê Thị Thảo Nguyên</td><td><i class="fa fa-phone"></i> 0377696612</td><td><i class="fa fa-phone"></i> 0914722369</td></tr>
+<tr style="--i:27"><td>27</td><td>Nguyễn Hoàng Thảo Nguyên</td><td><i class="fa fa-phone"></i> 0988260377</td><td><i class="fa fa-phone"></i> 0961044029</td></tr>
+<tr style="--i:28"><td>28</td><td>Phan Hoàng Nguyên</td><td><i class="fa fa-phone"></i> 0978481828</td><td><i class="fa fa-phone"></i> 0972551828</td></tr>
+<tr style="--i:29"><td>29</td><td>Phạm Hoàng Việt Nhật</td><td><i class="fa fa-phone"></i> 0345930499</td><td><i class="fa fa-phone"></i> 0934925409</td></tr>
+<tr style="--i:30"><td>30</td><td>Nguyễn Thị Trúc Nhi</td><td><i class="fa fa-phone"></i> 0337618075</td><td><i class="fa fa-phone"></i> 03287011720</td></tr>
+<tr style="--i:31"><td>31</td><td>Nguyễn Quỳnh Như</td><td><i class="fa fa-phone"></i> 0772479935</td><td><i class="fa fa-phone"></i> 0379474996</td></tr>
+<tr style="--i:32"><td>32</td><td>Lương Thị Thanh Phương</td><td><i class="fa fa-phone"></i> 0346519709</td><td><i class="fa fa-phone"></i> 0339016779</td></tr>
+<tr style="--i:33"><td>33</td><td>Nguyễn Nhật Ái Phương</td><td><i class="fa fa-phone"></i> 0326284645</td><td><i class="fa fa-phone"></i> 0355740145</td></tr>
+<tr style="--i:34"><td>34</td><td>Nguyễn Quang Quân</td><td><i class="fa fa-phone"></i> 0834634279</td><td><i class="fa fa-phone"></i> 0834634279</td></tr>
+<tr style="--i:35"><td>35</td><td>Đỗ Viết Quý</td><td><i class="fa fa-phone"></i> 0984366648</td><td><i class="fa fa-phone"></i> 0355292851</td></tr>
+<tr style="--i:36"><td>36</td><td>Nguyễn Vũ Duy Sang</td><td><i class="fa fa-phone"></i> 0935215885</td><td><i class="fa fa-phone"></i> 0935405266</td></tr>
+<tr style="--i:37"><td>37</td><td>Trần Thị Thùy</td><td><i class="fa fa-phone"></i> 0974090841</td><td><i class="fa fa-phone"></i> 0915481078</td></tr>
+<tr style="--i:38"><td>38</td><td>Nguyễn Minh Thư</td><td><i class="fa fa-phone"></i> 0388493412</td><td><i class="fa fa-phone"></i> 0979902215</td></tr>
+<tr style="--i:39"><td>39</td><td>Nguyễn Văn Tiến</td><td><i class="fa fa-phone"></i> 0925590829</td><td><i class="fa fa-phone"></i> 0362882612</td></tr>
+<tr style="--i:40"><td>40</td><td>Võ Tá Trường</td><td><i class="fa fa-phone"></i> 0372738474</td><td><i class="fa fa-phone"></i> 0344476704</td></tr>
+<tr style="--i:41"><td>41</td><td>Nguyễn Đặng Thanh Tú</td><td><i class="fa fa-phone"></i> 0949824189</td><td><i class="fa fa-phone"></i> 0815823830</td></tr>
+<tr style="--i:42"><td>42</td><td>Võ Tá Tuân</td><td><i class="fa fa-phone"></i> 0325452848</td><td><i class="fa fa-phone"></i> 0368556190</td></tr>
+<tr style="--i:43"><td>43</td><td>Nguyễn Hữu Vũ</td><td><i class="fa fa-phone"></i> 0346616403</td><td><i class="fa fa-phone"></i> 0384094905</td></tr>
+
+      <!-- Các dòng còn lại có thể tự thêm tương tự -->
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Danh sách học sinh & phụ huynh</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      background: #f0f2f5;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-weight: bold;
+    }
+
+    table {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    table thead {
+      background-color: #0d6efd;
+      color: #fff;
+    }
+
+    table tbody tr {
+      opacity: 0;
+      transform: translateY(10px);
+      animation: fadeInRow 0.4s ease forwards;
+    }
+
+    table tbody tr:hover {
+      background-color: #eaf4ff;
+      transform: scale(1.01);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+
+    table tbody tr:nth-child(n) {
+      animation-delay: calc(0.03s * var(--i));
+    }
+
+    @keyframes fadeInRow {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    td:nth-child(2) {
+  color: #dc3545; /* Màu đỏ đẹp */
+  font-weight: bold;
+}
+  table tbody tr:hover td:nth-child(2) {
+  color: #000; /* màu cam đỏ */
+  font-weight: bold;
+  text-shadow: 0 0 5px rgba(255, 111, 97, 0.6);
+  transition: all 0.3s ease;
+}
+    td:nth-child(3),
+    td:nth-child(4) {
+      color: #0d6efd;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 1000px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container py-5">
+  <h2>📋 Danh sách số điện thoại học sinh & phụ huynh</h2>
+
+  <table class="table table-bordered table-striped bg-white">
+    <thead>
+      <tr>
+        <th>STT</th>
+        <th>Họ và tên</th>
+        <th>SĐT Học sinh</th>
+        <th>SĐT Phụ huynh</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- MẪU: 10 dòng đầu có style="--i:X;" để có hiệu ứng mượt -->
+      <tr style="--i:1"><td>1</td><td>Võ Đăng Á</td><td><i class="fa fa-phone"></i> 0979957250</td><td><i class="fa fa-phone"></i> 0378861897</td></tr>
+      <tr style="--i:2"><td>2</td><td>Phan Thế Anh</td><td><i class="fa fa-phone"></i> 0357788312</td><td><i class="fa fa-phone"></i> 0372597038</td></tr>
+      <tr style="--i:3"><td>3</td><td>Đinh Gia Bảo</td><td><i class="fa fa-phone"></i> 0849656567</td><td><i class="fa fa-phone"></i> 0788545888</td></tr>
+      <tr style="--i:4"><td>4</td><td>Nguyễn Khánh Gia Bảo</td><td><i class="fa fa-phone"></i> 0979963407</td><td><i class="fa fa-phone"></i> 0977122239</td></tr>
+      <tr style="--i:5"><td>5</td><td>Võ Nguyễn Văn Bảo</td><td><i class="fa fa-phone"></i> 0376727747</td><td><i class="fa fa-phone"></i> 0984692752</td></tr>
+      <tr style="--i:6"><td>6</td><td>Nguyễn Văn Cường</td><td><i class="fa fa-phone"></i> 0337398306</td><td><i class="fa fa-phone"></i> 0349136597</td></tr>
+      <tr style="--i:7"><td>7</td><td>Nguyễn Mạnh Dũng</td><td><i class="fa fa-phone"></i> 0376259817</td><td><i class="fa fa-phone"></i> 0971250458</td></tr>
+      <tr style="--i:8"><td>8</td><td>Nguyễn Quốc Đại</td><td><i class="fa fa-phone"></i> 0359474771</td><td><i class="fa fa-phone"></i> 0971788447</td></tr>
+      <tr style="--i:9"><td>9</td><td>Ngô Thị Linh Đan</td><td><i class="fa fa-phone"></i> 0961245382</td><td><i class="fa fa-phone"></i> 0396373996</td></tr>
+      <tr style="--i:10"><td>10</td><td>Đỗ Thành Đạt</td><td><i class="fa fa-phone"></i> 0862684302</td><td><i class="fa fa-phone"></i> 0917658079</td></tr>
+      <tr style="--i:11"><td>11</td><td>Huỳnh Tấn Đạt</td><td><i class="fa fa-phone"></i> 0912245108</td><td><i class="fa fa-phone"></i> 0343449668</td></tr>
+<tr style="--i:12"><td>12</td><td>Lê Văn Đạt</td><td><i class="fa fa-phone"></i> 0916754980</td><td><i class="fa fa-phone"></i> 0339230140</td></tr>
+<tr style="--i:13"><td>13</td><td>Nguyễn Thị Nguyên Hà</td><td><i class="fa fa-phone"></i> 0356243132</td><td><i class="fa fa-phone"></i> 0917016162</td></tr>
+<tr style="--i:14"><td>14</td><td>Nguyễn Trọng Hiệp</td><td><i class="fa fa-phone"></i> 0358319434</td><td><i class="fa fa-phone"></i> 0961356017</td></tr>
+<tr style="--i:15"><td>15</td><td>Đào Văn Hiếu</td><td><i class="fa fa-phone"></i> 0345764882</td><td><i class="fa fa-phone"></i> 0383688228</td></tr>
+<tr style="--i:16"><td>16</td><td>Cù Thị Hoa Hồng</td><td><i class="fa fa-phone"></i> 0398579548</td><td><i class="fa fa-phone"></i> 0386030089</td></tr>
+<tr style="--i:17"><td>17</td><td>Bùi Hữu Hùng</td><td><i class="fa fa-phone"></i> 0372936433</td><td><i class="fa fa-phone"></i> 0354382759</td></tr>
+<tr style="--i:18"><td>18</td><td>Nguyễn Thị Thanh Huyền</td><td><i class="fa fa-phone"></i> 0967909647</td><td><i class="fa fa-phone"></i> 0389447436</td></tr>
+<tr style="--i:19"><td>19</td><td>Đào Tuấn Hưng</td><td><i class="fa fa-phone"></i> 0886692748</td><td><i class="fa fa-phone"></i> 0905048855</td></tr>
+<tr style="--i:20"><td>20</td><td>Hoàng Anh Khoa</td><td><i class="fa fa-phone"></i> 0358643073</td><td><i class="fa fa-phone"></i> 0908410967</td></tr>
+<tr style="--i:21"><td>21</td><td>Trần Anh Kiệt</td><td><i class="fa fa-phone"></i> 0368737948</td><td><i class="fa fa-phone"></i> 0352364996</td></tr>
+<tr style="--i:22"><td>22</td><td>Võ Phan Anh Kiệt</td><td><i class="fa fa-phone"></i> 0347061758</td><td><i class="fa fa-phone"></i> 0965129350</td></tr>
+<tr style="--i:23"><td>23</td><td>Trần Thị Thu Lan</td><td><i class="fa fa-phone"></i> 0387825498</td><td><i class="fa fa-phone"></i> 0352543107</td></tr>
+<tr style="--i:24"><td>24</td><td>Hoàng Mai Khánh Linh</td><td><i class="fa fa-phone"></i> 0816154579</td><td><i class="fa fa-phone"></i> 0852506679</td></tr>
+<tr style="--i:25"><td>25</td><td>Nguyễn Nhật Minh</td><td><i class="fa fa-phone"></i> 0388978565</td><td><i class="fa fa-phone"></i> 0974796512</td></tr>
+<tr style="--i:26"><td>26</td><td>Lê Thị Thảo Nguyên</td><td><i class="fa fa-phone"></i> 0377696612</td><td><i class="fa fa-phone"></i> 0914722369</td></tr>
+<tr style="--i:27"><td>27</td><td>Nguyễn Hoàng Thảo Nguyên</td><td><i class="fa fa-phone"></i> 0988260377</td><td><i class="fa fa-phone"></i> 0961044029</td></tr>
+<tr style="--i:28"><td>28</td><td>Phan Hoàng Nguyên</td><td><i class="fa fa-phone"></i> 0978481828</td><td><i class="fa fa-phone"></i> 0972551828</td></tr>
+<tr style="--i:29"><td>29</td><td>Phạm Hoàng Việt Nhật</td><td><i class="fa fa-phone"></i> 0345930499</td><td><i class="fa fa-phone"></i> 0934925409</td></tr>
+<tr style="--i:30"><td>30</td><td>Nguyễn Thị Trúc Nhi</td><td><i class="fa fa-phone"></i> 0337618075</td><td><i class="fa fa-phone"></i> 03287011720</td></tr>
+<tr style="--i:31"><td>31</td><td>Nguyễn Quỳnh Như</td><td><i class="fa fa-phone"></i> 0772479935</td><td><i class="fa fa-phone"></i> 0379474996</td></tr>
+<tr style="--i:32"><td>32</td><td>Lương Thị Thanh Phương</td><td><i class="fa fa-phone"></i> 0346519709</td><td><i class="fa fa-phone"></i> 0339016779</td></tr>
+<tr style="--i:33"><td>33</td><td>Nguyễn Nhật Ái Phương</td><td><i class="fa fa-phone"></i> 0326284645</td><td><i class="fa fa-phone"></i> 0355740145</td></tr>
+<tr style="--i:34"><td>34</td><td>Nguyễn Quang Quân</td><td><i class="fa fa-phone"></i> 0834634279</td><td><i class="fa fa-phone"></i> 0834634279</td></tr>
+<tr style="--i:35"><td>35</td><td>Đỗ Viết Quý</td><td><i class="fa fa-phone"></i> 0984366648</td><td><i class="fa fa-phone"></i> 0355292851</td></tr>
+<tr style="--i:36"><td>36</td><td>Nguyễn Vũ Duy Sang</td><td><i class="fa fa-phone"></i> 0935215885</td><td><i class="fa fa-phone"></i> 0935405266</td></tr>
+<tr style="--i:37"><td>37</td><td>Trần Thị Thùy</td><td><i class="fa fa-phone"></i> 0974090841</td><td><i class="fa fa-phone"></i> 0915481078</td></tr>
+<tr style="--i:38"><td>38</td><td>Nguyễn Minh Thư</td><td><i class="fa fa-phone"></i> 0388493412</td><td><i class="fa fa-phone"></i> 0979902215</td></tr>
+<tr style="--i:39"><td>39</td><td>Nguyễn Văn Tiến</td><td><i class="fa fa-phone"></i> 0925590829</td><td><i class="fa fa-phone"></i> 0362882612</td></tr>
+<tr style="--i:40"><td>40</td><td>Võ Tá Trường</td><td><i class="fa fa-phone"></i> 0372738474</td><td><i class="fa fa-phone"></i> 0344476704</td></tr>
+<tr style="--i:41"><td>41</td><td>Nguyễn Đặng Thanh Tú</td><td><i class="fa fa-phone"></i> 0949824189</td><td><i class="fa fa-phone"></i> 0815823830</td></tr>
+<tr style="--i:42"><td>42</td><td>Võ Tá Tuân</td><td><i class="fa fa-phone"></i> 0325452848</td><td><i class="fa fa-phone"></i> 0368556190</td></tr>
+<tr style="--i:43"><td>43</td><td>Nguyễn Hữu Vũ</td><td><i class="fa fa-phone"></i> 0346616403</td><td><i class="fa fa-phone"></i> 0384094905</td></tr>
+
+      <!-- Các dòng còn lại có thể tự thêm tương tự -->
+    </tbody>
+  </table>
+</div>
+<script>
+  function updateTime() {
+    const now = new Date();
+    const timeString = now.toLocaleTimeString('vi-VN'); // Định dạng giờ Việt
+    document.getElementById('currentTime').textContent = timeString;
+  }
+  setInterval(updateTime, 1000);
+  updateTime(); // cập nhật ngay khi tải trang
+</script>
+</body>
+<!-- FOOTER -->
+<footer style="margin-top: 50px; padding: 20px; background-color: #343a40; color: white; text-align: center; border-top: 5px solid #0d6efd;">
+  <p style="margin: 0; font-size: 18px;"><strong>📘 Danh sách học sinh và phụ huynh</strong></p>
+  <p style="margin: 5px 0;">Cập nhật lần cuối: <strong>19/06/2025</strong></p>
+  <p style="margin: 5px 0;">🕒 Thời gian hiện tại: <span id="currentTime">--:--:--</span></p>
+  <p style="margin: 5px 0;">Liên hệ quản trị viên: <a href="mailto:bhhung@gmail.com" style="color: #ffc107;">bhhung2k4@gmail.com</a></p>
+  <div style="margin-top: 10px;">
+  <a href="https://zalo.me/iamxhung1010" target="_blank" style="color: white; margin: 0 10px;">
+    <i class="fas fa-comment-dots"></i> Zalo
+  </a>
+  <a href="https://youtube.com" target="_blank" style="color: white; margin: 0 10px;">
+    <i class="fab fa-youtube"></i> YouTube
+  </a>
+</div>
+</footer>
+</html>    </tbody>
+  </table>
+</div>
+<script>
+  function updateTime() {
+    const now = new Date();
+    const timeString = now.toLocaleTimeString('vi-VN'); // Định dạng giờ Việt
+    document.getElementById('currentTime').textContent = timeString;
+  }
+  setInterval(updateTime, 1000);
+  updateTime(); // cập nhật ngay khi tải trang
+</script>
+</body>
+<!-- FOOTER -->
+<footer style="margin-top: 50px; padding: 20px; background-color: #343a40; color: white; text-align: center; border-top: 5px solid #0d6efd;">
+  <p style="margin: 0; font-size: 18px;"><strong>📘 Danh sách học sinh và phụ huynh</strong></p>
+  <p style="margin: 5px 0;">Cập nhật lần cuối: <strong>19/06/2025</strong></p>
+  <p style="margin: 5px 0;">🕒 Thời gian hiện tại: <span id="currentTime">--:--:--</span></p>
+  <p style="margin: 5px 0;">Liên hệ quản trị viên: <a href="mailto:bhhung@gmail.com" style="color: #ffc107;">bhhung2k4@gmail.com</a></p>
+  <div style="margin-top: 10px;">
+  <a href="https://zalo.me/iamxhung1010" target="_blank" style="color: white; margin: 0 10px;">
+    <i class="fas fa-comment-dots"></i> Zalo
+  </a>
+  <a href="https://youtube.com" target="_blank" style="color: white; margin: 0 10px;">
+    <i class="fab fa-youtube"></i> YouTube
+  </a>
+</div>
+</footer>
+</html
